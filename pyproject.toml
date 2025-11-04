@@ -9,6 +9,31 @@ dependencies = [
     "aind-clabe==0.9.0rc3",
 ]
 
+[dependency-groups]
+
+dev = [
+    "ruff",
+    "codespell"
+]
 
 [tool.uv.sources]
 aind-behavior-vr-foraging = { path = "./Aind.Behavior.VrForaging" }
+
+
+[tool.ruff]
+line-length = 120
+target-version = 'py311'
+
+[tool.ruff.lint]
+extend-select = ['Q', 'RUF100', 'C90', 'I']
+extend-ignore = []
+mccabe = { max-complexity = 14 }
+pydocstyle = { convention = 'google' }
+
+[tool.codespell]
+skip = '.git,*.pdf,*.svg,./bonsai,*.bonsai,./docs/_build,uv.lock,*Generated.cs'
+ignore-words-list = 'nd'
+
+[tool.uv]
+default-groups = ['dev']
+required-version = '>=0.8.4'
