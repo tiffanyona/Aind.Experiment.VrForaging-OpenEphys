@@ -1,0 +1,14 @@
+[project]
+name = "aind-experiment-vr-foraging-open-ephys"
+version = "0.1.0"
+description = "A thin wrapper that runs VrForaging + OpenEphys experiments"
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "aind-behavior-vr-foraging[launcher]",
+    "aind-clabe",
+]
+
+
+[tool.uv.sources]
+aind-behavior-vr-foraging = { path = "./Aind.Behavior.VrForaging" }
